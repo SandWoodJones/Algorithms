@@ -1,26 +1,27 @@
+PROJECT_NAME = algorithms
+
+INCL_DIR =./include
+DEPS = $(wildcard $(INCL_DIR)/*.h) # Gets all header files in INCL_DIR
+
 CC=gcc
-CFLAGS= -g -Wall -I$(IDIR)
+CFLAGS= -g -Wall -I$(INCL_DIR)
 
+SRC_DIR = ./src
+SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 
-IDIR =./include
-_DEPS = algorithms.h
-DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS)) # Adds the full path to the headers in _DEPS
+OBJ_DIR = ./bin
+OBJ = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
+#OBJ = $(patsubst %,$(OBJ_DIR)/%,$(_OBJ))
 
-SDIR = ./src
-
-ODIR = ./bin
-_OBJ = main.o mean.o
-OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+all: $(OBJ)
+	$(CC) -o $(OBJ_DIR)/$(PROJECT_NAME) $^ $(CFLAGS)
 
 # for any file ending in .o in ODIR, dependent on the respective .c file and header
 # compile it generating object files and output it as with the same name
-$(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(DEPS)
+	mkdir -p $(OBJ_DIR)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-algorithms: $(OBJ)
-	$(CC) -o $(ODIR)/$@ $^ $(CFLAGS)
-
 .PHONY: clean
-
 clean:
-	rm -f $(ODIR)/*.o $(ODIR)/algorithms
+	rm -f $(OBJ_DIR)/*.o $(OBJ_DIR)/$(PROJECT_NAME)
