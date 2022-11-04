@@ -5,7 +5,8 @@ OBJ_DIR = ./bin
 EXECUTABLE = $(OBJ_DIR)/$(shell echo $(PROJECT_NAME) | tr A-Z a-z)
 
 CC=gcc
-CFLAGS= -g -Wall -I$(INCL_DIR)
+LIBS = -lm
+CFLAGS= -g -Wall -Wextra -I$(INCL_DIR)
 
 SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 
@@ -14,8 +15,7 @@ OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
 .PHONY: clean run
 
 $(EXECUTABLE): $(OBJ_FILES)
-	echo $(EXECUTABLE)
-	$(CC) -o $@ $^ $(CFLAGS)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 # for any file ending in .o in OBJ_DIR, dependent on the respective .c file and header
 # compile it generating object files and output it as with the same name
