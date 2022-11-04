@@ -1,27 +1,31 @@
-PROJECT_NAME = algorithms
-
+PROJECT_NAME = Algorithms
 INCL_DIR =./include
-DEPS = $(wildcard $(INCL_DIR)/*.h) # Gets all header files in INCL_DIR
+SRC_DIR = ./src
+OBJ_DIR = ./bin
+EXECUTABLE = $(OBJ_DIR)/$(shell echo $(PROJECT_NAME) | tr A-Z a-z)
 
 CC=gcc
 CFLAGS= -g -Wall -I$(INCL_DIR)
 
-SRC_DIR = ./src
 SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 
-OBJ_DIR = ./bin
-OBJ = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
-#OBJ = $(patsubst %,$(OBJ_DIR)/%,$(_OBJ))
+OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
 
-all: $(OBJ)
-	$(CC) -o $(OBJ_DIR)/$(PROJECT_NAME) $^ $(CFLAGS)
+.PHONY: clean run
 
-# for any file ending in .o in ODIR, dependent on the respective .c file and header
+$(EXECUTABLE): $(OBJ_FILES)
+	echo $(EXECUTABLE)
+	$(CC) -o $@ $^ $(CFLAGS)
+
+# for any file ending in .o in OBJ_DIR, dependent on the respective .c file and header
 # compile it generating object files and output it as with the same name
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(DEPS)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(OBJ_DIR)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-.PHONY: clean
 clean:
 	rm -f $(OBJ_DIR)/*.o $(OBJ_DIR)/$(PROJECT_NAME)
+	rm -rf $(OBJ_DIR)
+
+run: $(EXECUTABLE)
+	$^
