@@ -12,11 +12,19 @@ double sphereVolume(double);
 
 float lightPotency(float, float);
 
-struct Time {
+typedef struct {
 	int hours;
 	int minutes;
 	int seconds;
-};
-struct Time timeConverter(int);
+} Time;
+Time timeConverter(int);
+
+typedef enum {
+	IN_FIRST,
+	IN_SECOND,
+	IN_BOTH,
+	IN_NONE
+} IntervalStatus;
+IntervalStatus inInterval(float, float, float, float, float);
 
 #endif

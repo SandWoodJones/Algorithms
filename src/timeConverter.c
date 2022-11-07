@@ -1,8 +1,8 @@
 #include "algorithms.h"
 
 // Problem 1.4 - Convert seconds into hours, minutes and seconds
-struct Time timeConverter(int seconds) {
-	struct Time result;
+Time timeConverter(int seconds) {
+	Time result;
 
 	result.hours = seconds / 3600;
 	seconds -= result.hours * 3600; // removes the hours
