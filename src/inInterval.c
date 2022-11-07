@@ -1,5 +1,4 @@
 #include "algorithms.h"
-#include <stdio.h>
 
 // Problem 2.1 - Given a number n and two intervals [a, b] and [c, d] find if n is in one of these intervals, if it is in both or if it is in none.
 IntervalStatus inInterval(float n, float a, float b, float c, float d) {

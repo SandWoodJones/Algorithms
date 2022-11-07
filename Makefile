@@ -27,5 +27,6 @@ clean:
 	rm -f $(OBJ_DIR)/*.o $(OBJ_DIR)/$(PROJECT_NAME)
 	rm -rf $(OBJ_DIR)
 
-run: $(EXECUTABLE)
-	$^
+.SILENT: # No compiling output when executing make run
+run: $(EXECUTABLE) .SILENT
+	@$^
