@@ -20,6 +20,9 @@ int main() {
 		"in no intervals"
 	};
 	printf("The number 7 is in %s.\n", intervals[inInterval(7,1,10,5,8)]);
+	
+	float* raise = salaryRaise(303);
+	printf("Employee number #653 your current salary of $303 will be raised by %.0f%% to a total of $%.2f.\n", raise[0], raise[1]);
 
 	return 0;
 }

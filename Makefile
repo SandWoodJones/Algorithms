@@ -19,14 +19,17 @@ $(EXECUTABLE): $(OBJ_FILES)
 
 # for any file ending in .o in OBJ_DIR, dependent on the respective .c file and header
 # compile it generating object files and output it as with the same name
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	mkdir -p $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 clean:
 	rm -f $(OBJ_DIR)/*.o $(OBJ_DIR)/$(PROJECT_NAME)
 	rm -rf $(OBJ_DIR)
 
-.SILENT: # No compiling output when executing make run
-run: $(EXECUTABLE) .SILENT
-	@$^
+run:
+	@make -s $(EXECUTABLE) # calls make silently
+	$(EXECUTABLE)
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+

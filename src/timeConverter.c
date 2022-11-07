@@ -1,7 +1,7 @@
 #include "algorithms.h"
 
 // Problem 1.4 - Convert seconds into hours, minutes and seconds
-Time timeConverter(int seconds) {
+Time timeConverter(unsigned int seconds) {
 	Time result;
 
 	result.hours = seconds / 3600;

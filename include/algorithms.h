@@ -13,11 +13,11 @@ double sphereVolume(double);
 float lightPotency(float, float);
 
 typedef struct {
-	int hours;
-	int minutes;
-	int seconds;
+	unsigned int hours;
+	unsigned int minutes;
+	unsigned int seconds;
 } Time;
-Time timeConverter(int);
+Time timeConverter(unsigned int);
 
 typedef enum {
 	IN_FIRST,
@@ -26,5 +26,7 @@ typedef enum {
 	IN_NONE
 } IntervalStatus;
 IntervalStatus inInterval(float, float, float, float, float);
+
+float* salaryRaise(float);
 
 #endif
