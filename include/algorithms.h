@@ -3,6 +3,7 @@
 
 #include <math.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 float mean(float, float);
 
@@ -56,5 +57,19 @@ typedef enum {
 	sBIG_MIDDLE
 } SortingOption;
 int sortOrder(SortingOption, float[], unsigned int);
+
+typedef struct {
+	float base;
+	float height;
+	float radius;
+} Shape;
+float shapeAreaCalculator(Shape);
+
+typedef struct {
+	int* arr;
+	unsigned long size;
+} DynArr;
+
+DynArr divisibleBy(unsigned int, unsigned int, unsigned int, unsigned int);
 
 #endif

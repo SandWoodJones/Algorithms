@@ -53,9 +53,23 @@ int main() {
 	printf("The array [50.5, 13.22, 8, 9.993, 0, -5.3, 7] sorted with its biggest value in the middle is [");
 	for (int i = 0; i < 7; i++) {
 		printf("%.2f", unsorted_array[i]);
-		if (i < 6) { printf(", "); }
+		if (i < 6) printf(", ");
 	}
 	printf("].\n");
+
+
+	Shape shape = {0,5,3};
+	printf("The area of a cylinder of height of 5 and radius of 3 is %.2f.\n", shapeAreaCalculator(shape));
+
+	DynArr test = divisibleBy(1, 100, 13, 3);
+	printf("The numbers between 1 and 100 that result in 3 when divided by 13 are ");
+	for (int i = 0; i < test.size; i++) {
+		printf("%d", test.arr[i]);
+		if (i < test.size - 2) printf(", ");
+		else if (i < test.size - 1) printf(" and ");
+	}
+	printf(".\n");
+	free(test.arr);
 
 	return 0;
 }
