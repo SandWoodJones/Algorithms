@@ -72,4 +72,10 @@ typedef struct {
 
 DynArr divisibleBy(unsigned int, unsigned int, unsigned int, unsigned int);
 
+unsigned long long factorial(unsigned int);
+
+double eulers(unsigned int);
+
+unsigned long long fibonacci(unsigned int);
+
 #endif

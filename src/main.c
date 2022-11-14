@@ -63,13 +63,19 @@ int main() {
 
 	DynArr test = divisibleBy(1, 100, 13, 3);
 	printf("The numbers between 1 and 100 that result in 3 when divided by 13 are ");
-	for (int i = 0; i < test.size; i++) {
+	for (unsigned int i = 0; i < test.size; i++) {
 		printf("%d", test.arr[i]);
 		if (i < test.size - 2) printf(", ");
 		else if (i < test.size - 1) printf(" and ");
 	}
 	printf(".\n");
 	free(test.arr);
+
+	printf("The factorial of 7 is %ld.\n", factorial(7));
+
+	printf("Euler's number is %lf.\n", eulers(20));
+
+	printf("The 77th fibonacci number is %ld.\n", fibonacci(77));
 
 	return 0;
 }
