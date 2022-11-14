@@ -24,5 +24,38 @@ int main() {
 	float* raise = salaryRaise(303);
 	printf("Employee number #653 your current salary of $303 will be raised by %.0f%% to a total of $%.2f.\n", raise[0], raise[1]);
 
+	char* triangle_types[] = {
+		"don't form a",
+		"form an equilateral",
+		"form an isosceles",
+		"form a scalene"
+	};
+	printf("The sides 5, 8 and 8 %s triangle.\n", triangle_types[triangleCategorizer(5, 8, 8)]);
+	
+	char * quadrants[] = {
+		"first quadrant",
+		"second quadrant",
+		"third quadrant",
+		"fourth quadrant",
+		"X axis",
+		"Y axis",
+		"origin",
+	};
+	printf("The point (-33, 6) is in the %s.\n", quadrants[pointQuadrantLocator(-33,6)]);
+
+	Time beginTime = {7, 31, 5};
+	Time endTime = {3, 49, 49};
+	Time totalTime = timePassed(beginTime, endTime);
+	printf("The time passed between 7:31:05 and 03:49:49 of the next day is %d hours, %d minutes and %d seconds.\n", totalTime.hours, totalTime.minutes, totalTime.seconds);
+
+	float unsorted_array[7] = {50.05, 13.22, 8, 9.993, 0, -5.3, 7};
+	sortOrder(sBIG_MIDDLE, unsorted_array, 7);
+	printf("The array [50.5, 13.22, 8, 9.993, 0, -5.3, 7] sorted with its biggest value in the middle is [");
+	for (int i = 0; i < 7; i++) {
+		printf("%.2f", unsorted_array[i]);
+		if (i < 6) { printf(", "); }
+	}
+	printf("].\n");
+
 	return 0;
 }

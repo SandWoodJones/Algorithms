@@ -20,13 +20,41 @@ typedef struct {
 Time timeConverter(unsigned int);
 
 typedef enum {
-	IN_FIRST,
-	IN_SECOND,
-	IN_BOTH,
-	IN_NONE
+	iIN_FIRST,
+	iIN_SECOND,
+	iIN_BOTH,
+	iIN_NONE
 } IntervalStatus;
 IntervalStatus inInterval(float, float, float, float, float);
 
 float* salaryRaise(float);
+
+typedef enum {
+	tNOT_TRIANGLE,
+	tEQUILATERAL,
+	tISOSCELES,
+	tSCALENE
+} TriangleType;
+TriangleType triangleCategorizer(float, float, float);
+
+typedef enum {
+	qIN_FIRST,
+	qIN_SECOND,
+	qIN_THIRD,
+	qIN_FOURTH,
+	qIN_X_AXIS,
+	qIN_Y_AXIS,
+	qIN_ORIGIN,
+} Quadrant;
+Quadrant pointQuadrantLocator(float, float);
+
+Time timePassed(Time, Time);
+
+typedef enum {
+	sASCENDING,
+	sDESCENDING,
+	sBIG_MIDDLE
+} SortingOption;
+int sortOrder(SortingOption, float[], unsigned int);
 
 #endif

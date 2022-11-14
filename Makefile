@@ -1,3 +1,5 @@
+# Makefile by SandWood Jones
+
 PROJECT_NAME = Algorithms
 INCL_DIR =./include
 SRC_DIR = ./src
@@ -30,6 +32,6 @@ run:
 	@make -s $(EXECUTABLE) # calls make silently
 	$(EXECUTABLE)
 
+# creates the bin directory if it does not exist
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
-
