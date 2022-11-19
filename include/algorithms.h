@@ -78,4 +78,21 @@ double eulers(unsigned int);
 
 unsigned long long fibonacci(unsigned int);
 
+double interestingSums(unsigned short);
+
+long double interestingSeries(float, int, unsigned short);
+
+typedef enum {
+	tCELSIUS,
+	tFAHRENHEIT,
+	tKELVIN
+} UnitOfTemperature;
+
+typedef struct {
+	double value;
+	UnitOfTemperature unit;
+} Temperature;
+
+void temperatureConversion(Temperature*, UnitOfTemperature);
+
 #endif

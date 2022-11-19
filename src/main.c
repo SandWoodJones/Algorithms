@@ -32,7 +32,7 @@ int main() {
 	};
 	printf("The sides 5, 8 and 8 %s triangle.\n", triangle_types[triangleCategorizer(5, 8, 8)]);
 	
-	char * quadrants[] = {
+	char* quadrants[] = {
 		"first quadrant",
 		"second quadrant",
 		"third quadrant",
@@ -71,11 +71,21 @@ int main() {
 	printf(".\n");
 	free(test.arr);
 
-	printf("The factorial of 7 is %ld.\n", factorial(7));
+	printf("The factorial of 7 is %lld.\n", factorial(7));
 
 	printf("Euler's number is %lf.\n", eulers(20));
 
-	printf("The 77th fibonacci number is %ld.\n", fibonacci(77));
+	printf("The 77th fibonacci number is %lld.\n", fibonacci(77));
+
+	printf("The sum S = 2/500 - 5/450 + 2/400 - 5/350 + ... is equal to %lf.\n", interestingSums(2));
+
+	printf("The series S = 1 + 1/X^2 + 1/X^3 + ... + 1/X^N, where X = 13 and N = 7 is %Lf.\n", interestingSeries(13, 7, 0));
+
+	char* units[] = {"celsius", "fahrenheit", "kelvin"};
+	Temperature temp = {50, tFAHRENHEIT};
+	printf("%.2lf° %s is", temp.value, units[temp.unit]);
+	temperatureConversion(&temp, tKELVIN);
+	printf(" %.2lf° %s.\n", temp.value, units[temp.unit]);
 
 	return 0;
 }
