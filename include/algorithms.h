@@ -14,60 +14,60 @@ double sphereVolume(double);
 float lightPotency(float, float);
 
 typedef struct {
-	unsigned int hours;
-	unsigned int minutes;
-	unsigned int seconds;
+    unsigned int hours;
+    unsigned int minutes;
+    unsigned int seconds;
 } Time;
 Time timeConverter(unsigned int);
 
 typedef enum {
-	iIN_FIRST,
-	iIN_SECOND,
-	iIN_BOTH,
-	iIN_NONE
+    iIN_FIRST,
+    iIN_SECOND,
+    iIN_BOTH,
+    iIN_NONE
 } IntervalStatus;
 IntervalStatus inInterval(float, float, float, float, float);
 
 float* salaryRaise(float);
 
 typedef enum {
-	tNOT_TRIANGLE,
-	tEQUILATERAL,
-	tISOSCELES,
-	tSCALENE
+    tNOT_TRIANGLE,
+    tEQUILATERAL,
+    tISOSCELES,
+    tSCALENE
 } TriangleType;
 TriangleType triangleCategorizer(float, float, float);
 
 typedef enum {
-	qIN_FIRST,
-	qIN_SECOND,
-	qIN_THIRD,
-	qIN_FOURTH,
-	qIN_X_AXIS,
-	qIN_Y_AXIS,
-	qIN_ORIGIN,
+    qIN_FIRST,
+    qIN_SECOND,
+    qIN_THIRD,
+    qIN_FOURTH,
+    qIN_X_AXIS,
+    qIN_Y_AXIS,
+    qIN_ORIGIN,
 } Quadrant;
 Quadrant pointQuadrantLocator(float, float);
 
 Time timePassed(Time, Time);
 
 typedef enum {
-	sASCENDING,
-	sDESCENDING,
-	sBIG_MIDDLE
+    sASCENDING,
+    sDESCENDING,
+    sBIG_MIDDLE
 } SortingOption;
 int sortOrder(SortingOption, float[], unsigned int);
 
 typedef struct {
-	float base;
-	float height;
-	float radius;
+    float base;
+    float height;
+    float radius;
 } Shape;
 float shapeAreaCalculator(Shape);
 
 typedef struct {
-	int* arr;
-	unsigned long size;
+    int* arr;
+    unsigned long size;
 } DynArr;
 
 DynArr divisibleBy(unsigned int, unsigned int, unsigned int, unsigned int);
@@ -83,16 +83,22 @@ double interestingSums(unsigned short);
 long double interestingSeries(float, int, unsigned short);
 
 typedef enum {
-	tCELSIUS,
-	tFAHRENHEIT,
-	tKELVIN
+    tCELSIUS,
+    tFAHRENHEIT,
+    tKELVIN
 } UnitOfTemperature;
 
 typedef struct {
-	double value;
-	UnitOfTemperature unit;
+    double value;
+    UnitOfTemperature unit;
 } Temperature;
 
 void temperatureConversion(Temperature*, UnitOfTemperature);
+
+int sumOfMultiples(int, int, int);
+
+float bigMean(int*, unsigned int);
+
+bool perfectNumber(unsigned int);
 
 #endif

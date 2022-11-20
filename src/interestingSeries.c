@@ -3,6 +3,7 @@
 // Problem 3.5 - Given X and N, calculate the output of these series
 // S = 1 + 1/X^2 + 1/X^3 + ... + 1/X^N
 // S = X^N/1 - X^(N - 1)/2 + X^(N - 2) / 3 - X^(N - 3)/4 + ... + X/N
+// S = X - (X^2)/3! + (X^4)/5! - (X^6)/7! + (X^8)/9! - ...
 long double interestingSeries(float x, int n, unsigned short choice) {
 	long double result = 0;
 
@@ -20,6 +21,13 @@ long double interestingSeries(float x, int n, unsigned short choice) {
 			}
 			break;
 		}
+        case 2: {
+            for (int i = 1, j = 1; i <= n; i++, j+= 2) {
+                if (i % 2 != 0) result += pow(x, i) / factorial(j);
+                else result -= pow(x, i) / factorial(j);
+            }
+            break;
+        }
 		default: return -1;
 	}
 
