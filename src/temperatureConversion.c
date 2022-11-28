@@ -1,6 +1,6 @@
 #include "algorithms.h"
 
-// Problem 3.6 - Convert between all units of temperature.
+// Problem 3.7 - Convert between all units of temperature.
 void temperatureConversion(Temperature* input, UnitOfTemperature convertTo) {
     switch (convertTo) {
         case tCELSIUS: {

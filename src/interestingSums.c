@@ -1,6 +1,6 @@
 #include "algorithms.h"
 
-// Problem 3.4 - Calculate the output of these sums
+// Problem 3.5 - Calculate the output of these sums
 // S = 1/1 + 3/2 + 5/3 + ... + 99/50
 // S = 1/1 - 2/4 + 3/9 + ... - 10/100
 // S = 2/500 - 5/450 + 2/400 - 5/350 + ...

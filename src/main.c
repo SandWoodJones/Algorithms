@@ -61,21 +61,21 @@ int main() {
     Shape shape = {0,5,3};
     printf("The area of a cylinder of height of 5 and radius of 3 is %.2f.\n", shapeAreaCalculator(shape));
 
-    DynArr test = divisibleBy(1, 100, 13, 3);
+    DynArr divisibles = divisibleBy(1, 100, 13, 3);
     printf("The numbers between 1 and 100 that result in 3 when divided by 13 are ");
-    for (unsigned int i = 0; i < test.size; i++) {
-        printf("%d", test.arr[i]);
-        if (i < test.size - 2) printf(", ");
-        else if (i < test.size - 1) printf(" and ");
+    for (unsigned int i = 0; i < divisibles.size; i++) {
+        printf("%d", divisibles.arr[i]);
+        if (i < divisibles.size - 2) printf(", ");
+        else if (i < divisibles.size - 1) printf(" and ");
     }
     printf(".\n");
-    free(test.arr);
+    free(divisibles.arr);
 
-    printf("The factorial of 7 is %lld.\n", factorial(7));
+    printf("The factorial of 7 is %ld.\n", factorial(7));
 
     printf("Euler's number is %lf.\n", eulers(20));
 
-    printf("The 77th fibonacci number is %lld.\n", fibonacci(77));
+    printf("The 77th fibonacci number is %ld.\n", fibonacci(77));
 
     printf("The sum S = 2/500 - 5/450 + 2/400 - 5/350 + ... is equal to %lf.\n", interestingSums(2));
 
@@ -93,6 +93,10 @@ int main() {
     printf("The mean of the set [382, 114, 125, 276, 39, 201, 241, 196, 194, 305, 172, 79, 342] is %.3f.\n", bigMean(meanArr, sizeof(meanArr) / sizeof(meanArr[0])));
 
     if (perfectNumber(28)) printf("28 is a perfect number.\n");
+
+    printf("If you want to climb 5m of stairs with steps of 30cm in height, you must climb %d steps.\n", metersToSteps(30, 5));
+
+    printf("Given A = 11, B = 7, C = 2 and R = (A+B)^2 and S = (B+C)^2 we have that D = (R+S)/2 = %.2f.\n", powerSum(11, 7, 2));
 
     return 0;
 }

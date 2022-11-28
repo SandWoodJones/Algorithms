@@ -1,6 +1,6 @@
 #include "algorithms.h"
 
-// Problem 2.3 - Given a point in 2D space, find if it belongs over a quadrant, an axis or the origin.
+// Problem 2.4 - Given a point in 2D space, find if it belongs over a quadrant, an axis or the origin.
 Quadrant pointQuadrantLocator(float x, float y) {
 	if (x == 0) {
 		if (y == 0) return qIN_ORIGIN;

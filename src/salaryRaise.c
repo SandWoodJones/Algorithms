@@ -1,6 +1,6 @@
 #include "algorithms.h"
 
-/* 2.2 - Find an employee's raise and new salary according the following table:
+/* Problem 2.2 - Find an employee's raise and new salary according the following table:
 |  current wage  | raise percentage |
 |    0 - 300     |        10%       |
 |  300.01 - 600  |        11%       |

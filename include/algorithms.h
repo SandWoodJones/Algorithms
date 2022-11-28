@@ -4,6 +4,7 @@
 #include <math.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 float mean(float, float);
 
@@ -14,11 +15,11 @@ double sphereVolume(double);
 float lightPotency(float, float);
 
 typedef struct {
-    unsigned int hours;
-    unsigned int minutes;
-    unsigned int seconds;
+    uint32_t hours;
+    uint32_t minutes;
+    uint32_t seconds;
 } Time;
-Time timeConverter(unsigned int);
+Time timeConverter(uint32_t);
 
 typedef enum {
     iIN_FIRST,
@@ -56,7 +57,7 @@ typedef enum {
     sDESCENDING,
     sBIG_MIDDLE
 } SortingOption;
-int sortOrder(SortingOption, float[], unsigned int);
+int sortOrder(SortingOption, float[], size_t);
 
 typedef struct {
     float base;
@@ -70,13 +71,13 @@ typedef struct {
     unsigned long size;
 } DynArr;
 
-DynArr divisibleBy(unsigned int, unsigned int, unsigned int, unsigned int);
+DynArr divisibleBy(uint32_t, uint32_t, uint32_t, uint32_t);
 
-unsigned long long factorial(unsigned int);
+uint64_t factorial(uint32_t);
 
-double eulers(unsigned int);
+double eulers(uint32_t);
 
-unsigned long long fibonacci(unsigned int);
+uint64_t fibonacci(uint32_t);
 
 double interestingSums(unsigned short);
 
@@ -97,8 +98,12 @@ void temperatureConversion(Temperature*, UnitOfTemperature);
 
 int sumOfMultiples(int, int, int);
 
-float bigMean(int*, unsigned int);
+float bigMean(int*, size_t);
 
-bool perfectNumber(unsigned int);
+bool perfectNumber(uint32_t);
+
+uint32_t metersToSteps(float, float);
+
+float powerSum(uint32_t, uint32_t, uint32_t);
 
 #endif
